@@ -9,14 +9,13 @@ reader.setProperty('rate', 125)  # setting up new voice rate
 
 """VOLUME"""
 volume = reader.getProperty('volume')  # getting to know current volume level (min=0 and max=1)
-print("Current volume level : " + str(volume))  # printing current volume level
+print("Starting volume level : " + str(volume))  # printing current volume level
 reader.setProperty('volume', 1.0)  # setting up volume level  between 0 and 1
 print("Setting volume level to 100%.")  # printing current volume level
 
 """VOICE"""
 voices = reader.getProperty('voices')  # getting details of current voice
-# reader.setProperty('voice', voices[1].id)  # changing index, changes voices. 1 for female
-reader.setProperty('voice', voices[0].id)  # changing index, changes voices. o for male
+reader.setProperty('voice', voices[1].id)  # changing voices index. 0 for male and 1 for female
 
 
 def read(text):
